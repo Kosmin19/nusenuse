@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡¡IMPORTANTE!!</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Hace que el cuerpo ocupe todo el alto de la ventana */
+            display: flex;
+            justify-content: center; /* Centra los elementos horizontalmente */
+            align-items: center; /* Centra los elementos verticalmente */
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 30px; /* Para dejar espacio entre el título y los enlaces */
+        }
+
+        .container {
+            text-align: center;
+            display: flex;
+            flex-direction: column; /* Organiza los enlaces en una columna */
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Estilo para el enlace "Nose" en la parte inferior derecha */
+        .container1 {
+            position: absolute;
+            bottom: 20px; /* Lo coloca 20px desde el fondo de la ventana */
+            right: 20px; /* Lo coloca 20px desde la derecha de la ventana */
+            text-align: right;
+        }
+
+        /* Estilos de los enlaces */
+        a {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 15px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #2980b9; /* Color al pasar el ratón */
+            transform: translateY(-3px); /* Efecto de elevación */
+        }
+
+        /* Estilo para desactivar el enlace "NO" */
+        #noLink {
+            pointer-events: auto;
+        }
+
+        #noLink:disabled {
+            background-color: #d3d3d3;
+            color: #888;
+            cursor: not-allowed;
+        }
+    </style>
+    <script type="text/javascript">
+        // Función para mostrar las alertas de broma
+        function showAlert() {
+            alert("Efectivamente, eres adoptado");
+            setTimeout(function() {
+                alert("¡Sorpresa... Sigues siendo adoptado");
+            }, 1000); // 2 segundos entre las alertas
+            setTimeout(function() {
+                alert("Ya decía yo que tenías pinta de adoptado...");
+            }, 2000); // 2 segundos entre alertas
+            setTimeout(function() {
+                alert("Nada ha cambiado, sigues siendo adoptado :(");
+            }, 4000); // 2 segundos entre alertas
+            setTimeout(function() {
+                alert("¡Lo siento! No eres un niño de sangre, pero sí eres uno de corazón (Nah... mentira).");
+            }, 6000); // 2 segundos entre alertas
+            setTimeout(function() {
+                alert("La verdad es que... ¡No tienes solución, eres adoptado! :P");
+            }, 8000); // 2 segundos entre alertas
+            setTimeout(function() {
+                alert("¡Vas a ser adoptado por siempre! No lo olvides.");
+            }, 10000); // 2 segundos entre alertas
+        }
+
+        // Función para mostrar el mensaje cuando se hace clic en "NO"
+        function showNoMessage() {
+            alert("¡No mientas!");
+        }
+
+        // Función para desactivar el enlace "NO" temporalmente
+        function disableNoLink() {
+            var noLink = document.getElementById("noLink");
+            noLink.style.pointerEvents = "none";  // Desactiva el enlace
+            noLink.style.color = "gray";  // Cambia el color del enlace para mostrar que está deshabilitado
+            noLink.style.backgroundColor = "#d3d3d3";  // Cambia el color de fondo para mostrar que está deshabilitado
+
+            // Vuelve a habilitar el enlace después de 5 segundos
+            setTimeout(function() {
+                noLink.style.pointerEvents = "auto";  // Habilita el enlace nuevamente
+                noLink.style.color = "#fff";  // Restaura el color original
+                noLink.style.backgroundColor = "#3498db";  // Restaura el color original de fondo
+            }, 5000); // 5 segundos
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>¿ERES ADOPTADO?</h1>
+        <a href="#" onclick="showAlert();">Si</a> <!-- Enlace "Sí" ejecuta las alertas -->
+        <a href="#" id="noLink" onclick="showNoMessage(); disableNoLink();">NO</a> <!-- Enlace "NO" muestra el mensaje y desactiva -->
+    </div>
+    <div class="container1">
+        <a href="#" onclick="alert('Mira que eres tonto');">Nose</a> <!-- Enlace "Nose" abajo a la derecha -->
+    </div>
+</body>
+</html>
+
